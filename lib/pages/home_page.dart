@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     "Estudei HTML e CSS durante o segundo semestre no IMT, assim como alguns frameworks como Bootstrap. O projeto do 2º semestre do curso, no qual foi feito uma parte de um site para a APAE-SCS, foi desenvolvido com HTML",
 
     // descriçao JS
-    "Estudei JavaScript durante o 2º semestre de 2023, com intuito de usá-lo no back-end do Projeto Integrador do semestre",
+    "Estudei JavaScript durante o 2º semestre de 2023 com intuito de usá-lo no back-end do Projeto Integrador do semestre, e me familiarizei com sua estrutura",
 
     // descriçao AWS
     "Fiz o curso AWS Cloud Pratictioner durante o 1º semestre de 2023, que me trouxe os conhecimentos básicos gerais sobre a nuvem AWS e seus componentes, com apoio de uma disciplina especial opcional.",
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                   Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 100, left: 50),
+                      padding: const EdgeInsets.only(top: 50, left: 50),
                       child: Text(
                         "Quem sou eu",
                         style: GoogleFonts.openSans(
@@ -163,21 +163,23 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 100, right: 50.0),
+                    padding: EdgeInsets.only(top: alturaTela < 900 ? 10 : 30),
                     child: Align(
                         alignment: Alignment.center,
-                        child: Text(
-                            "Eu sou um estudante de Ciência da Computação no Instituto Mauá de Tecnologia, como previsão de conclusão\n"
-                            "em dezembro de 2026 com conhecimentos nas seguintes áreas",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.openSans(
-                              color: Colors.black,
-                              letterSpacing: .1,
-                              fontSize: 25,
-                            ))),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 50),
+                          child: Text(
+                              "Eu sou um estudante de Ciência da Computação no Instituto Mauá de Tecnologia, como previsão de conclusão em dezembro de 2026 com conhecimentos nas seguintes áreas",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.openSans(
+                                color: Colors.black,
+                                letterSpacing: .1,
+                                fontSize: alturaTela < 900 ? 18 : 25,
+                              )),
+                        )),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 100.0),
+                    padding: EdgeInsets.only(top: alturaTela <= 975 ? 10 : 30),
                     child: CarouselSlider(
                       items: const [
                         ImgCarrossel(imgPath: "assets/images/java-logo.png"),
@@ -189,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                         ImgCarrossel(imgPath: "assets/images/aws-logo.png"),
                       ],
                       options: CarouselOptions(
-                          height: 150,
+                          height: alturaTela < 900 ? 100 : 150,
                           enlargeCenterPage: true,
                           autoPlay: true,
                           autoPlayInterval: const Duration(seconds: 7),
@@ -204,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(50),
+                    padding: EdgeInsets.only(top: alturaTela < 900 ? 0 : 50),
                     child: Text(itens[indiceItemCarrossel],
                         style: GoogleFonts.openSans(
                             textStyle: const TextStyle(
