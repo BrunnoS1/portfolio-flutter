@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_inicial/utils/utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onPressInicio;
   final VoidCallback onPressQuem;
   final VoidCallback onPressCerts;
 
-  const MinhaAppBar({
-    Key? key,
+  MinhaAppBar({
+    super.key,
     required this.onPressInicio,
     required this.onPressQuem,
     required this.onPressCerts,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,8 +63,11 @@ class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
                     const Text("Certificados", style: TextStyle(fontSize: 20)),
               ),
               IconButton(
-                  onPressed: () {},
-                  icon: Image.asset('assets/images/git_icon.png'))
+                  onPressed: () {
+                    _launchUrl();
+                  },
+                  icon: Image.asset('assets/images/git_icon.png'),
+                  tooltip: 'Github')
             ],
           ),
         ),
@@ -73,4 +77,20 @@ class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  Uri urlGit = Uri.parse('https://github.com/BrunnoS1');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(urlGit)) {
+      throw Exception('Could not launch $urlGit');
+    }
+  }
+
+  // void _launchURL(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(url, forceWebView: false, enableJavaScript: true);
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
 }
