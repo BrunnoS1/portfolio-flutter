@@ -73,6 +73,7 @@ class _ContainerQuemSouState extends State<ContainerQuemSou> {
               ImgCarrossel(imgPath: "assets/images/html-logo.png"),
               ImgCarrossel(imgPath: "assets/images/js-logo.png"),
               ImgCarrossel(imgPath: "assets/images/aws-logo.png"),
+              ImgCarrossel(imgPath: "assets/images/cisco-logo.png"),
             ],
             options: CarouselOptions(
                 height: alturaTela < breakpointAlturaMobile ? 100 : 150,

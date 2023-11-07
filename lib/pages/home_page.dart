@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:projeto_inicial/widgets/appbar_widget.dart';
+import 'package:projeto_inicial/widgets/certificados_projetos_widget.dart';
 import 'package:projeto_inicial/widgets/container_quemsou.dart';
 import 'package:projeto_inicial/widgets/container_intro.dart';
 
@@ -47,14 +48,11 @@ class _HomePageState extends State<HomePage> {
         children: const [
           Column(
             children: [
-              // primeira parte (roxa)
               ContainerIntro(),
-              // segunda parte (branca)
               ContainerQuemSou(),
-              // terceira parte
-              ContainerIntro(),
+              CertificadosProjetos()
             ],
-          )
+          ),
         ],
       ),
     );

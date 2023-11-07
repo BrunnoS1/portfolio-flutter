@@ -66,7 +66,7 @@ class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
                   onPressed: () {
                     _launchUrl();
                   },
-                  icon: Image.asset('assets/images/git_icon.png'),
+                  icon: Image.asset('assets/images/git-logo.png'),
                   tooltip: 'Github')
             ],
           ),
@@ -78,19 +78,11 @@ class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
-  Uri urlGit = Uri.parse('https://github.com/BrunnoS1');
+  final Uri urlGit = Uri.parse('https://github.com/BrunnoS1');
 
   Future<void> _launchUrl() async {
     if (!await launchUrl(urlGit)) {
       throw Exception('Could not launch $urlGit');
     }
   }
-
-  // void _launchURL(String url) async {
-  //   if (await canLaunch(url)) {
-  //     await launch(url, forceWebView: false, enableJavaScript: true);
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  // }
 }
