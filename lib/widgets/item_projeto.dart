@@ -21,34 +21,31 @@ class ItemProjeto extends StatelessWidget {
     }
 
     return GestureDetector(
-        onTap: () {
-          _launchUrl();
-        },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: Image.asset(
-                imgpath,
-                height: 150,
-                width: 150,
-                fit: BoxFit.fitHeight,
-              ),
+      onTap: () {
+        _launchUrl();
+      },
+      child: Column(
+        children: [
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Image.asset(
+              imgpath,
+              height: 150,
+              width: 150,
+              fit: BoxFit.fitHeight,
             ),
-            Flexible(
-              child: Text(
-                texto,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                  color: Colors.white,
-                ),
-              ),
+          ),
+          Text(
+            texto,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+              color: Colors.white,
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }

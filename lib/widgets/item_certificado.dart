@@ -5,7 +5,7 @@ class ItemCertificado extends StatefulWidget {
   final String texto;
 
   const ItemCertificado({
-    super.key, 
+    super.key,
     required this.imgpath,
     required this.texto,
   });
@@ -46,7 +46,6 @@ class _ItemCertificadoState extends State<ItemCertificado> {
               ),
             )
           : Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Image.asset(
                   widget.imgpath,
@@ -54,15 +53,13 @@ class _ItemCertificadoState extends State<ItemCertificado> {
                   width: 150,
                   fit: BoxFit.scaleDown,
                 ),
-                Flexible(
-                  child: Text(
-                    widget.texto,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Colors.white,
-                    ),
+                Text(
+                  widget.texto,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.white,
                   ),
                 ),
               ],

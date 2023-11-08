@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projeto_inicial/utils/lista_certificados.dart';
-import 'package:projeto_inicial/utils/lista_projetos.dart';
-import 'package:projeto_inicial/utils/utils.dart';
 import 'package:projeto_inicial/widgets/item_certificado.dart';
 import 'package:projeto_inicial/widgets/item_projeto.dart';
 
@@ -12,7 +9,7 @@ class CertificadosProjetos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final larguraTela = MediaQuery.of(context).size.width;
-    return SizedBox(
+    return Container(
       width: larguraTela,
       child: Column(
         children: [
@@ -33,29 +30,27 @@ class CertificadosProjetos extends StatelessWidget {
               ),
             ),
           ),
-          LayoutBuilder(
-            builder: (_, constraints) {
-              return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                ),
-                padding: EdgeInsets.symmetric(
-                    vertical: 16,
-                    horizontal: constraints.maxWidth >= breakpointLarguraMobile
-                        ? 0
-                        : 16),
-                shrinkWrap: true,
-                itemCount: listaCertificados.length,
-                itemBuilder: (context, index) {
-                  return ItemCertificado(
-                    imgpath: listaCertificados[index].imgpath,
-                    texto: listaCertificados[index].texto,
-                  );
-                },
-              );
-            },
+          const Wrap(
+            spacing: 5,
+            alignment: WrapAlignment.start,
+            children: [
+              ItemCertificado(
+                imgpath: "assets/images/certificados/awsacad.png",
+                texto: "AWS Cloud Practitioner",
+              ),
+              ItemCertificado(
+                imgpath: "assets/images/certificados/cisco.png",
+                texto: "Cyber Security Essentials",
+              ),
+              ItemCertificado(
+                imgpath: "assets/images/certificados/dataibm.png",
+                texto: "Getting Started with Enterprise Data Science",
+              ),
+              ItemCertificado(
+                imgpath: "assets/images/certificados/oracle.png",
+                texto: "Java Foundations",
+              ),
+            ],
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -74,30 +69,20 @@ class CertificadosProjetos extends StatelessWidget {
               ),
             ),
           ),
-          LayoutBuilder(
-            builder: (_, constraints) {
-              return GridView.builder(
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                ),
-                padding: EdgeInsets.symmetric(
-                    vertical: 16,
-                    horizontal: constraints.maxWidth >= breakpointLarguraMobile
-                        ? 0
-                        : 16),
-                shrinkWrap: true,
-                itemCount: listaProjetos.length,
-                itemBuilder: (context, index) {
-                  return ItemProjeto(
-                    imgpath: listaProjetos[index].imgpath,
-                    texto: listaProjetos[index].texto,
-                    url: listaProjetos[index].url,
-                  );
-                },
-              );
-            },
+          const Wrap(
+            spacing: 5,
+            alignment: WrapAlignment.start,
+            children: [
+              ItemProjeto(
+                  imgpath: "assets/images/projetos/code_quest.png",
+                  texto: "Code Quest\nLinguagem: Java, SQL - mySQL",
+                  url: "https://github.com/BrunnoS1/Code-Quest"),
+              ItemProjeto(
+                  imgpath: "assets/images/flutter-logo.png",
+                  texto:
+                      "Portfólio feito em flutter\nLinguagem: Dart - Flutter",
+                  url: "https://github.com/BrunnoS1/portfolio-flutter"),
+            ],
           ),
         ],
       ),
