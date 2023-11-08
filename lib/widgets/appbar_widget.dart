@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:projeto_inicial/utils/utils.dart';
+import 'package:projeto_inicial/utils/breakpoints.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {

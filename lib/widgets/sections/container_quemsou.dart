@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_inicial/utils/listas_desc.dart';
-import 'package:projeto_inicial/utils/utils.dart';
+import 'package:projeto_inicial/utils/breakpoints.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:projeto_inicial/widgets/imgcarrosel_widget.dart';
 

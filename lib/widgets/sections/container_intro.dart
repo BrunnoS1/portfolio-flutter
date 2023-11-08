@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projeto_inicial/utils/utils.dart';
 
 class ContainerIntro extends StatelessWidget {
   const ContainerIntro({super.key});
@@ -69,14 +68,6 @@ class ContainerIntro extends StatelessWidget {
                           ),
                         ),
                       ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          top: larguraTela <= breakpointLarguraTablet ? 50 : 0,
-                          right: 100.0),
-                      child: Image.asset(
-                        "assets/images/imagem.jpg",
-                      ),
                     ),
                   ],
                 ),
