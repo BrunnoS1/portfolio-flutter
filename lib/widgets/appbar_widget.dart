@@ -107,7 +107,8 @@ class MinhaAppBar extends StatelessWidget implements PreferredSizeWidget {
                     ),
                     IconButton(
                       onPressed: () async {
-                        await Clipboard.setData(const ClipboardData(text: "bbsouza957@gmail.com"));
+                        await Clipboard.setData(
+                            const ClipboardData(text: "bbsouza957@gmail.com"));
                         mostrarMsgFeedback(context);
                       },
                       icon: const Icon(Icons.mail_outline,
