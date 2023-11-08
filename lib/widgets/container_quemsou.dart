@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_inicial/utils/listas_desc.dart';
@@ -52,7 +50,7 @@ class _ContainerQuemSouState extends State<ContainerQuemSou> {
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 50),
                 child: Text(
-                    "Eu sou um estudante de Ciência da Computação no Instituto Mauá de Tecnologia, como previsão de conclusão em dezembro de 2026 com conhecimentos nas seguintes áreas",
+                    "Eu sou um estudante de Ciência da Computação no Instituto Mauá de Tecnologia, com previsão de conclusão em dezembro de 2026 com conhecimentos nas seguintes áreas",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.openSans(
                       color: Colors.black,
@@ -74,6 +72,7 @@ class _ContainerQuemSouState extends State<ContainerQuemSou> {
               ImgCarrossel(imgPath: "assets/images/js-logo.png"),
               ImgCarrossel(imgPath: "assets/images/aws-logo.png"),
               ImgCarrossel(imgPath: "assets/images/cisco-logo.png"),
+              ImgCarrossel(imgPath: "assets/images/git-logo.png"),
             ],
             options: CarouselOptions(
                 height: alturaTela < breakpointAlturaMobile ? 100 : 150,
@@ -94,11 +93,11 @@ class _ContainerQuemSouState extends State<ContainerQuemSou> {
               top: alturaTela < breakpointAlturaMobile ? 0 : 50),
           child: Text(itens[indiceItemCarrossel],
               style: GoogleFonts.openSans(
-                  textStyle: const TextStyle(
+                  textStyle:  TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 letterSpacing: .1,
-                fontSize: 40,
+                fontSize: larguraTela <= breakpointAlturaMobile? 20 :40,
               ))),
         ),
         Container(
@@ -106,11 +105,11 @@ class _ContainerQuemSouState extends State<ContainerQuemSou> {
           child: Text(descricao[indiceItemCarrossel],
               textAlign: TextAlign.center,
               style: GoogleFonts.aBeeZee(
-                  textStyle: const TextStyle(
+                  textStyle:  TextStyle(
                 color: Colors.black,
                 letterSpacing: .5,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: larguraTela <= breakpointAlturaMobile? 15 :20,
               ))),
         )
       ]),

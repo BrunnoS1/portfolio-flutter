@@ -32,7 +32,6 @@ class ContainerIntro extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Wrap(
-                  // Wrap pra mudar de linha e a imagem nao sobrepor o texto
                   alignment: WrapAlignment.start,
                   spacing: 500,
                   children: [

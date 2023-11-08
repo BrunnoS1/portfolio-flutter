@@ -1,10 +1,10 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
+import 'package:projeto_inicial/utils/utils.dart';
 import 'package:projeto_inicial/widgets/appbar_widget.dart';
 import 'package:projeto_inicial/widgets/certificados_projetos_widget.dart';
 import 'package:projeto_inicial/widgets/container_quemsou.dart';
 import 'package:projeto_inicial/widgets/container_intro.dart';
+import 'package:projeto_inicial/widgets/drawer_mobile_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,6 +36,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final larguraTela = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 24, 0, 33),
       appBar: MinhaAppBar(
@@ -43,6 +45,13 @@ class _HomePageState extends State<HomePage> {
         onPressQuem: _onPressQuem,
         onPressCerts: _onPressCerts,
       ),
+      drawer: larguraTela <= breakpointLarguraMobile?
+      DrawerMobile(
+        onPressInicio: _onPressedInicio,
+        onPressQuem: _onPressQuem,
+        onPressCerts: _onPressCerts,
+      )
+      :const SizedBox.shrink(),
       body: ListView(
         controller: _controller,
         children: const [

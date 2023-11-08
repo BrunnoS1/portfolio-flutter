@@ -7,7 +7,8 @@ final itens = [
   "HTML",
   "JavaScript",
   "AWS",
-  "Cyber Segurança"
+  "Cyber Segurança",
+  "Git",
 ];
 
 final descricao = [
@@ -33,5 +34,8 @@ final descricao = [
   "Fiz o curso AWS Cloud Pratictioner durante o 1º semestre de 2023, que me trouxe os conhecimentos básicos gerais sobre a nuvem AWS e seus componentes, com apoio de uma disciplina especial opcional.",
 
   // descriçao cybersegurança
-  "Conclui o curso Cibersecurity Essentials da Cisco Networking Academy durante o primeiro semestre de 2023. Nele aprendi fundamentos da segurança cibernética e do funcionamento de redes"
+  "Concluí o curso Cibersecurity Essentials da Cisco Networking Academy durante o primeiro semestre de 2023. Nele aprendi fundamentos da segurança cibernética e do funcionamento de redes",
+
+  // descricao git
+  "Comecei a usar o git para realizar o meu primeiro projeto do curso da faculdade, quando aprendi suas funções essenciais para controle de repositório",
 ];
