@@ -5,7 +5,7 @@ class ItemProjeto extends StatelessWidget {
   final String imgpath;
   final String texto;
   final String url;
-  ItemProjeto(
+  const ItemProjeto(
       {super.key,
       required this.imgpath,
       required this.texto,

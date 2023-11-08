@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerMobile extends StatefulWidget {
@@ -18,12 +19,19 @@ class DrawerMobile extends StatefulWidget {
 }
 
 class _DrawerMobileState extends State<DrawerMobile> {
+    void mostrarMsgFeedback(BuildContext context) {
+    const snackBar = SnackBar(
+      content: Text('Endereço copiado!'),
+      duration: Duration(seconds: 2),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: const Color.fromARGB(255, 24, 0, 33),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DrawerHeader(
             child: Container(
@@ -93,16 +101,31 @@ class _DrawerMobileState extends State<DrawerMobile> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: IconButton(
-              onPressed: () {
-                _launchUrl();
-              },
-              icon: Image.asset(
-                'assets/images/github-logo.png',
-                height: 50,
-                width: 50,
-              ),
-              tooltip: 'Github',
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {
+                    _launchUrlGit();
+                  },
+                  icon: Image.asset(
+                    'assets/images/github-logo.png',
+                    height: 50,
+                    width: 50,
+                  ),
+                  tooltip: 'Github',
+                ),
+                IconButton(
+                  onPressed: () async {
+                    await Clipboard.setData(
+                        const ClipboardData(text: "bbsouza957@gmail.com"));
+                        mostrarMsgFeedback(context);
+                  },
+                  icon: const Icon(Icons.mail_outline,
+                      size: 50, color: Colors.white),
+                  tooltip: 'Copiar e-mail',
+                ),
+              ],
             ),
           ),
         ],
@@ -112,7 +135,7 @@ class _DrawerMobileState extends State<DrawerMobile> {
 
   final Uri urlGit = Uri.parse('https://github.com/BrunnoS1');
 
-  Future<void> _launchUrl() async {
+  Future<void> _launchUrlGit() async {
     if (!await launchUrl(urlGit)) {
       throw Exception('Could not launch $urlGit');
     }

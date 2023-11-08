@@ -12,7 +12,7 @@ class CertificadosProjetos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final larguraTela = MediaQuery.of(context).size.width;
-    return Container(
+    return SizedBox(
       width: larguraTela,
       child: Column(
         children: [
